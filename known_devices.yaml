@@ -1,0 +1,180 @@
+
+mings_iphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: mings iphone
+  picture:
+  track: true
+  vendor:
+
+mingsipad:
+  hide_if_away: false
+  icon:
+  mac: 4C:32:75:18:20:62
+  name: Mings-iPad
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+mingsair:
+  hide_if_away: false
+  icon:
+  mac: 28:CF:E9:49:69:FB
+  name: Mings-Air
+  picture:
+  track: true
+  vendor: unknown
+
+mingsiphone:
+  hide_if_away: false
+  icon:
+  mac: A8:66:7F:CF:85:D7
+  name: Mings-iPhone
+  picture:
+  track: true
+  vendor: unknown
+
+mi5xiaomishouji:
+  hide_if_away: false
+  icon:
+  mac: 64:CC:2E:DB:FF:C6
+  name: MI5-xiaomishouji
+  picture:
+  track: true
+  vendor: unknown
+
+esp_01_0:
+  hide_if_away: false
+  icon:
+  mac: A0:20:A6:01:04:A1
+  name: ESP 01 0
+  picture:
+  track: true
+  vendor: Espressif Inc.
+
+meilan2:
+  hide_if_away: false
+  icon:
+  mac: 40:C6:2A:11:A8:06
+  name: meilan-2
+  picture:
+  track: true
+  vendor: unknown
+
+desktopkk67us8:
+  hide_if_away: false
+  icon:
+  mac: 30:3A:64:ED:D8:DE
+  name: DESKTOP-KK67US8
+  picture:
+  track: true
+  vendor: Intel Corporate
+
+android7146d954e49f4749:
+  hide_if_away: false
+  icon:
+  mac: A4:08:EA:11:5E:C7
+  name: android-7146d954e49f4749
+  picture:
+  track: true
+  vendor: Murata Manufacturing Co., Ltd.
+
+android6067abd578f2f6f4:
+  hide_if_away: false
+  icon:
+  mac: D0:FF:50:83:11:6C
+  name: android-6067abd578f2f6f4
+  picture:
+  track: true
+  vendor: Texas Instruments
+
+esp_061770:
+  hide_if_away: false
+  icon:
+  mac: 2C:3A:E8:06:17:70
+  name: ESP 061770
+  picture:
+  track: true
+  vendor: Espressif Inc.
+
+esp02_0:
+  hide_if_away: false
+  icon:
+  mac: 2C:3A:E8:05:ED:6B
+  name: esp02 0
+  picture:
+  track: true
+  vendor: unknown
+
+dnc20160504yhn:
+  hide_if_away: false
+  icon:
+  mac: 5C:93:A2:7C:EE:D1
+  name: DNC-20160504YHN
+  picture:
+  track: true
+  vendor: Liteon Technology Corporation
+
+esp_easy_0:
+  hide_if_away: false
+  icon:
+  mac: 60:01:94:2B:A3:CC
+  name: ESP Easy 0
+  picture:
+  track: true
+  vendor: Espressif Inc.
+
+raspberrypi:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:E5:D5:4A
+  name: raspberrypi
+  picture:
+  track: true
+  vendor: unknown
+
+esp_easy_0_2:
+  hide_if_away: false
+  icon:
+  mac: 2C:3A:E8:08:F0:40
+  name: ESP Easy 0
+  picture:
+  track: true
+  vendor: Espressif Inc.
+
+androidb597487ffb0a2757:
+  hide_if_away: false
+  icon:
+  mac: B0:F1:EC:83:EB:29
+  name: android-b597487ffb0a2757
+  picture:
+  track: true
+  vendor: AMPAK Technology, Inc.
+
+18fe3405ed6b:
+  hide_if_away: false
+  icon:
+  mac: 18:FE:34:05:ED:6B
+  name: 18fe3405ed6b
+  picture:
+  track: true
+  vendor: unknown
+
+orangepi:
+  hide_if_away: false
+  icon:
+  mac: 28:9F:4B:75:5E:70
+  name: orangepi
+  picture:
+  track: true
+  vendor: unknown
+
+broadlink_rmmini88ff9e:
+  hide_if_away: false
+  icon:
+  mac: 34:EA:34:88:FF:9E
+  name: Broadlink RMMINI-88-ff-9e
+  picture:
+  track: true
+  vendor: HangZhou Gubei Electronics Technology Co.,Ltd

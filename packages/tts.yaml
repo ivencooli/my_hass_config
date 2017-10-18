@@ -1,0 +1,115 @@
+
+# Text to speech
+tts:
+  - platform: baidu
+    language: zh
+    api_key: baiduapikey
+    secret_key: baidusecret_key
+    speed: 5
+    pitch: 5
+    volume: 9
+    person: 0
+
+
+
+
+script:
+#小韩，政法系高材生。目前已被楼主双规（规定时间，播报规定内容）。主要负责播报新闻。
+  han_tts:
+    sequence:
+      - service: tts.baidu_say
+        data_template:
+          entity_id: media_player.vlc_player
+          message: '{{msg}}'
+          options:
+            speed: 4
+            pitch: 5
+            volume: 9
+            person: 1
+          cache: false
+#小思，播音系人美声甜女主播。目前已被楼主双规（规定时间，播报规定内容）。主要负责播报天气预报。
+  si_tts:
+    sequence:
+      - service: tts.baidu_say
+        data_template:
+          entity_id: media_player.vlc_player
+          message: '{{msg}}'
+          options:
+            speed: 5
+            pitch: 5
+            volume: 9
+            person: 0
+          cache: false
+#小碧，3岁小萝莉一枚。主要负责卖萌。
+  bi_tts:
+    sequence:
+      - service: tts.baidu_say
+        data_template:
+          entity_id: media_player.vlc_player
+          message: '{{msg}}'
+          options:
+            speed: 3
+            pitch: 9
+            volume: 9
+            person: 0
+          cache: false
+#小岸，热血少年，目前主要负责HA安防播报。
+  an_tts:
+    sequence:
+      - service: tts.baidu_say
+        data_template:
+          entity_id: media_player.vlc_player
+          message: '{{msg}}'
+          options:
+            speed: 3
+            pitch: 9
+            volume: 9
+            person: 1
+          cache: false
+#百度情感合成技术，度逍遥
+  xiaoyao_tts:
+    sequence:
+      - service: tts.baidu_say
+        data_template:
+          entity_id: media_player.vlc_player
+          message: '{{msg}}'
+          options:
+            speed: 5
+            pitch: 5
+            volume: 9
+            person: 3
+          cache: false
+#百度情感合成技术，度丫丫
+  yaya_tts:
+    sequence:
+      - service: tts.baidu_say
+        data_template:
+          entity_id: media_player.vlc_player
+          message: '{{msg}}'
+          options:
+            speed: 5
+            pitch: 5
+            volume: 9
+            person: 4
+          cache: false
+
+
+
+
+
+
+automation:
+  - alias: test_speech
+    trigger:
+       - platform: event
+         event_type: click
+         event_data:
+          entity_id: binary_sensor.switch_158d0000f242f6
+          click_type: single
+    action:
+      - service: script.si_tts
+        data_template:
+          msg: >
+            "现在天气{{states('sensor.now_weather')}}，
+            温度是{{states('sensor.now_tmp')}}度，
+            1小时后百分之{{states('sensor.1hour_pop')}}的可能会下雨。"

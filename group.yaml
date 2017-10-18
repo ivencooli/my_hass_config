@@ -1,0 +1,168 @@
+default_view:
+  view: yes
+  entities:
+    - alarm_control_panel.Alarm
+    - media_player.speaker
+    - climate.GREE
+    - sensor.iphone
+    - sensor.Living_Room_Temp
+    - sensor.Living_Room_Hum
+    - sensor.Living_Room_lx
+    - sensor.pmfan
+    - light.rgblight
+    - light.living_light
+    - light.chufang_light
+    - group.climate1
+    - camera.living_room
+    - binary_sensor.mencitest
+    - binary_sensor.yudi
+    - camera.room
+    - camera.pi
+
+# Home:
+#   view: yes
+#   entities:
+#     - camera.room
+#     - group.climate1
+#     - group.climate2
+#     - group.switch
+#     - group.sensor
+#     - group.tv
+#     - media_player.squeezebox
+
+switch:
+  view: yes
+  name: 开关
+  entities:
+    - light.rgblight
+    - light.chufang_light
+    - light.living_light
+    - group.sensor
+    - switch.Switch1
+    - switch.Switch2
+    - switch.switch3
+    - group.wifi_switch
+
+sensor:
+  view: yes
+  name: 室内传感器
+  entities:
+    - sensor.Living_Room_Temp
+    - sensor.Living_Room_Hum
+    - sensor.Living_Room_lx
+    - sensor.atmosphere
+    - sensor.sound
+    - sensor.viber
+    - sensor.CO
+
+wifi_switch:
+  view: no
+  name: wifi开关
+  entities:
+    - switch.t1
+    - switch.t2
+    - switch.t3
+    - switch.t4
+    - switch.t5
+    - switch.t6
+
+tv:
+  view: yes
+  name: 空调
+#    icon: mdi:view-dashboard
+  entities:
+    - climate.GREE
+    - climate.Midea
+    # - input_boolean.bedroom_air_conditioner_temp_cool
+    # - input_boolean.bedroom_air_conditioner_temp_hot
+    # - input_slider.bedroom_air_conditioner_temp
+
+  ##############天气页面###############
+climate:
+  name: 天气情况
+  view: yes
+  # icon: mdi:weather-partlycloudy
+  entities:
+    - group.climate1
+    - group.climate2
+    - group.climate3
+    - group.climate4
+    - group.climate5
+    - group.climate6
+
+climate1:
+  name: 即时预报
+  view: no
+  entities:
+    - sensor.now_weather
+    - sensor.now_tmp
+    - sensor.now_hum
+    - sensor.now_vis
+    - sensor.now_pcpn
+
+climate2:
+  name: 今天天气
+  view: no
+  entities:
+    - sensor.today_sr
+    - sensor.today_ss
+    - sensor.today_weather_day
+    - sensor.today_weather_night
+    - sensor.today_pop
+    - sensor.today_maxtmp
+    - sensor.today_mintmp
+
+climate3:
+  name: 1小时预报
+  view: no
+  entities:
+    - sensor.1hour_weather
+    - sensor.1hour_pop
+
+climate4:
+  name: 空气质量
+  view: no
+  entities:
+    - sensor.aqi_qlty
+    - sensor.aqi_pm25
+    - sensor.aqi
+
+climate5:
+  name: 生活指数
+  view: no
+  entities:
+# 舒适指数
+    - sensor.comf_suggestion_brf
+#    - sensor.comf_suggestion_txt
+# 空气指数
+    - sensor.air_suggestion_brf
+#    - sensor.air_suggestion_txt
+# 穿衣指数
+    - sensor.drsg_suggestion_brf
+#    - sensor.drsg_suggestion_txt
+# 感冒指数
+    - sensor.flu_suggestion_brf
+#    - sensor.flu_suggestion_txt
+# 洗车指数
+    - sensor.cw_suggestion_brf
+#    - sensor.cw_suggestion_txt
+# 运动指数
+    - sensor.sport_suggestion_brf
+#    - sensor.sport_suggestion_txt
+# 旅游指数
+    - sensor.trav_suggestion_brf
+#    - sensor.trav_suggestion_txt
+# 紫外线指数
+    - sensor.uv_suggestion_brf
+#    - sensor.uv_suggestion_txt
+climate6:
+  name: 明天天气
+  view: no
+  entities:
+    - sensor.TomorrowDay_SR
+    - sensor.TomorrowDay_SS
+    - sensor.TomorrowDay_Weather_Day
+    - sensor.TomorrowDay_Weather_Night
+    - sensor.TomorrowDay_POP
+    - sensor.TomorrowDay_MaxTmp
+    - sensor.TomorrowDay_MinTmp

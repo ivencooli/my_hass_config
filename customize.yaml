@@ -1,0 +1,264 @@
+sensor.ram_use:
+  friendly_name: RAM使用率
+sun.sun:
+  friendly_name: 日出日落 时间
+
+sensor.Living_Room_Hum:
+  friendly_name: 室内湿度
+  homebridge_hidden: no
+  icon: mdi:thermometer-lines
+
+sensor.Living_Room_lx:
+  friendly_name: 室外光照强度
+  homebridge_hidden: no
+  icon: mdi:thermometer
+
+
+sensor.atmosphere:
+  friendly_name: 室内大气压强
+  homebridge_hidden: no
+  icon: mdi:thermometer
+
+sensor.Living_Room_Temp:
+  friendly_name: 室内温度
+  homebridge_hidden: no
+  icon: mdi:thermometer
+
+sensor.sound:
+  friendly_name: 室内声音大小
+
+
+sensor.viber:
+  friendly_name: 室内震动大小
+  homebridge_hidden: no
+sensor.CO:
+  friendly_name: 室内一氧化碳浓度大小
+  homebridge_hidden: no
+
+
+  #天气汉化
+sensor.now_weather:
+  friendly_name: 即时天气
+  homebridge_hidden: true
+
+sensor.now_tmp:
+  friendly_name: 即时温度
+  homebridge_hidden: true
+
+sensor.now_hum:
+  friendly_name: 相对湿度
+  homebridge_hidden: true
+  icon: mdi:thermometer-lines
+
+sensor.now_fl:
+  friendly_name: 体感温度
+  homebridge_hidden: true
+  icon: mdi:thermometer
+
+sensor.now_sc:
+  friendly_name: 风级
+  homebridge_hidden: true
+  icon: mdi:weather-windy-variant
+
+sensor.now_dir:
+  friendly_name: 风向
+  homebridge_hidden: true
+  icon: mdi:compass
+
+sensor.now_spd:
+  friendly_name: 风速
+  homebridge_hidden: true
+  icon: mdi:weather-windy
+
+sensor.now_vis:
+  friendly_name: 能见度
+  homebridge_hidden: true
+
+sensor.now_pcpn:
+  friendly_name: 降水量
+  homebridge_hidden: true
+  icon: mdi:weather-rainy
+
+  #今天预报
+sensor.today_sr:
+  friendly_name: 日出时间
+  homebridge_hidden: true
+  icon: mdi:weather-sunset-up
+
+sensor.today_ss:
+  friendly_name: 日落时间
+  homebridge_hidden: true
+  icon: mdi:weather-sunset-down
+
+sensor.today_weather_day:
+  friendly_name: 今天白天
+  homebridge_hidden: true
+
+sensor.today_weather_night:
+  friendly_name: 今天晚上
+  homebridge_hidden: true
+
+sensor.today_pop:
+  friendly_name: 降雨概率
+  homebridge_hidden: true
+  icon: mdi:weather-pouring
+
+sensor.today_maxtmp:
+  friendly_name: 最高温度
+  homebridge_hidden: true
+
+sensor.today_mintmp:
+  friendly_name: 最低温度
+  homebridge_hidden: true
+
+
+  #明天预报
+sensor.TomorrowDay_SR:
+  friendly_name: 日出时间
+  homebridge_hidden: true
+  icon: mdi:weather-sunset-up
+
+sensor.TomorrowDay_SS:
+  friendly_name: 日落时间
+  homebridge_hidden: true
+  icon: mdi:weather-sunset-down
+
+sensor.TomorrowDay_Weather_Day:
+  friendly_name: 明天白天
+  homebridge_hidden: true
+
+sensor.TomorrowDay_Weather_Night:
+  friendly_name: 明天晚上
+  homebridge_hidden: true
+
+sensor.TomorrowDay_POP:
+  friendly_name: 降雨概率
+  homebridge_hidden: true
+  icon: mdi:weather-pouring
+
+sensor.TomorrowDay_MaxTmp:
+  friendly_name: 最高温度
+  homebridge_hidden: true
+
+sensor.TomorrowDay_MinTmp:
+  friendly_name: 最低温度
+  homebridge_hidden: true
+
+  #未来一小时情况
+sensor.1hour_weather:
+  friendly_name: 天气情况
+  homebridge_hidden: true
+
+sensor.1hour_pop:
+  friendly_name: 下雨概率
+  homebridge_hidden: true
+  icon: mdi:weather-pouring
+
+  #空气质量
+sensor.aqi_qlty:
+  friendly_name: 空气质量
+  homebridge_hidden: true
+  icon: mdi:apple-mobileme
+
+sensor.aqi_pm25:
+  friendly_name: PM 2.5
+  homebridge_hidden: true
+  icon: mdi:blur
+
+sensor.pmfan:
+  friendly_name:  房间PM2.5浓度
+  homebridge_hidden: no
+  icon: mdi:blur
+
+sensor.aqi:
+  friendly_name: 空气指数
+  homebridge_hidden: true
+
+
+  # 舒适指数
+sensor.comf_suggestion_brf:
+  friendly_name: 舒适指数
+  homebridge_hidden: true
+  icon: mdi:human-handsup
+
+sensor.comf_suggestion_txt:
+  friendly_name: 舒适建议
+  homebridge_hidden: true
+  icon: mdi:clipboard-text
+
+  # 空气指数
+sensor.air_suggestion_brf:
+  friendly_name: 空气指数
+  homebridge_hidden: true
+  icon: mdi:cloud-outline
+
+sensor.air_suggestion_txt:
+  friendly_name: 空气建议
+  homebridge_hidden: true
+  icon: mdi:clipboard-text
+
+  # 穿衣指数
+sensor.drsg_suggestion_brf:
+  friendly_name: 穿衣指数
+  homebridge_hidden: true
+  icon: mdi:tshirt-crew
+
+sensor.drsg_suggestion_txt:
+  friendly_name: 穿衣建议
+  homebridge_hidden: true
+  icon: mdi:clipboard-text
+
+  # 感冒指数
+sensor.flu_suggestion_brf:
+  friendly_name: 感冒指数
+  homebridge_hidden: true
+  icon: mdi:hospital
+
+sensor.flu_suggestion_txt:
+  friendly_name: 感冒建议
+  homebridge_hidden: true
+  icon: mdi:clipboard-text
+
+  # 洗车指数
+sensor.cw_suggestion_brf:
+  friendly_name: 洗车指数
+  homebridge_hidden: true
+  icon: mdi:car
+
+sensor.cw_suggestion_txt:
+  friendly_name: 洗车建议
+  homebridge_hidden: true
+  icon: mdi:clipboard-text
+
+  # 运动指数
+sensor.sport_suggestion_brf:
+  friendly_name: 运动指数
+  homebridge_hidden: true
+  icon: mdi:bike
+
+sensor.sport_suggestion_txt:
+  friendly_name: 运动建议
+  homebridge_hidden: true
+  icon: mdi:clipboard-text
+
+  # 旅游指数
+sensor.trav_suggestion_brf:
+  friendly_name: 旅游指数
+  homebridge_hidden: true
+  icon: mdi:airplane-takeoff
+
+sensor.trav_suggestion_txt:
+  friendly_name: 旅游建议
+  homebridge_hidden: true
+  icon: mdi:clipboard-text
+
+  # 紫外线指数
+sensor.uv_suggestion_brf:
+  friendly_name: 紫外线指数
+  homebridge_hidden: true
+  icon: mdi:umbrella
+
+sensor.uv_suggestion_txt:
+  friendly_name: 紫外线建议
+  homebridge_hidden: true
+  icon: mdi:clipboard-text

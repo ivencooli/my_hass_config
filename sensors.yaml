@@ -1,0 +1,194 @@
+
+- platform: mqtt
+  name: "Living_Room_Temp"
+  state_topic: "/ESP_02/dht11/Temperature"
+  qos: 0
+  unit_of_measurement: "°C"
+
+
+- platform: mqtt
+  name: "Living_Room_Hum"
+  state_topic: "/ESP_02/dht11/Humidity "
+  qos: 0
+  unit_of_measurement: "%"
+
+- platform: mqtt
+  name: "Living_Room_lx"
+  state_topic: "/ESP_02/GY30/Lux"
+  qos: 1
+  unit_of_measurement: "lx"
+
+- platform: mqtt_room
+  device_id: fda50693a4e24fb1afcfc6eb07647825_272d_49de
+  name: 'beacon1'
+  state_topic: 'happy-bubbles/presence/ha'
+
+- platform: mqtt_room
+  device_id: d173ff276f014431908e06624b0c6c0e_0001_0001
+  name: 'iphone'
+  state_topic: 'happy-bubbles/presence/ha'
+
+- platform: mqtt_room
+  device_id: fda50693a4e24fb1afcfc6eb07647833_2773_074a
+  name: 'beacon2'
+  state_topic: 'happy-bubbles/presence/ha'
+
+
+- platform: mqtt_room
+  device_id: fda50693a4e24fb1afcfc6eb07647866_2752_48ea
+  name: 'beacon3'
+  state_topic: 'happy-bubbles/presence/ha'
+
+- platform: mqtt
+  name: "atmosphere"
+  state_topic: "home/sonoff/living_room/1/temp"
+  qos: 1
+  unit_of_measurement: "Kpa"
+  value_template: 1.022
+
+- platform: mqtt
+  name: "sound"
+  state_topic: "home/sonoff/living_room/1/temp"
+  qos: 1
+  unit_of_measurement: "dB"
+  value_template: 33.2
+
+- platform: mqtt
+  name: "viber"
+  state_topic: "home/sonoff/living_room/1/temp"
+  qos: 1
+  unit_of_measurement: "%"
+  value_template: 6
+
+- platform: mqtt
+  name: "CO"
+  state_topic: "home/sonoff/living_room/1/temp"
+  qos: 1
+  unit_of_measurement: "ppm"
+  value_template: 1.022
+
+- platform: mqtt
+  name: "pmfan"
+  state_topic: "/ESP_01/gp2y10/Dust"
+  qos: 1
+  unit_of_measurement: "mg/m3"
+
+
+- platform: HeWeather
+  api_key: 179205013e45423a894352e05e37faa9    #API_KEY自己去和风天气
+  interval: 300
+  isShowWeatherPic: True
+  cityZh: 江门
+  monitored_conditions:
+# 空气质量
+    aqi:
+      # 空气质量指数//共六个级别，分别：优，良，轻度污染，中度污染，重度污染，严重污染
+      - aqi
+      # PM2.5
+      - pm25
+        # 空气质量
+      - qlty
+
+# 当天预报
+    ToDay_forecast:
+        # 日出时间
+      - sr
+        # 日落时间
+      - ss
+        # 白天天气情况
+      - Weather_d
+        # 夜间天气情况
+      - Weather_n
+        # 降水概率
+      - pop
+        # 最高温度
+      - maxTmp
+        # 最低温度
+      - minTmp
+
+# 明天预报
+    Tomorrow_forecast:
+        # 日出时间
+      - sr
+        # 日落时间
+      - ss
+        # 白天天气情况
+      - Weather_d
+        # 夜间天气情况
+      - Weather_n
+        # 降水概率
+      - pop
+        # 最高温度
+      - maxTmp
+        # 最低温度
+      - minTmp
+
+# 1小时预报
+    1Hour_forecast:
+        # 天气情况
+      - Weather
+        # 降水概率
+      - pop
+
+# 即时预报
+    now:
+        # 天气情况
+      - Weather
+        # 体感温度
+      - fl
+        # 相对湿度
+      - hum
+        # 降水量
+      - pcpn
+        # 温度
+      - tmp
+        # 能见度
+      - vis
+        # 风向
+      - dir
+        # 风力等级
+      - sc
+        # 风速
+      - spd
+
+# 生活指数
+    suggestion:
+        # 空气指数
+      air:
+        - brf
+  #      - txt
+        # 舒适指数
+      comf:
+        - brf
+  #      - txt
+        # 洗车指数
+      cw:
+        - brf
+  #      - txt
+        # 穿衣指数
+      drsg:
+        - brf
+  #      - txt
+        # 感冒指数
+      flu:
+        - brf
+  #      - txt
+        # 运动指数
+      sport:
+        - brf
+  #      - txt
+        # 旅游指数
+      trav:
+        - brf
+  #      - txt
+        # 紫外线指数
+      uv:
+        - brf
+  #      - txt
+
+- platform: systemmonitor
+  resources:
+  # - type: memory_free
+  - type: memory_use_percent
+  - type: processor_use
+  # - type: since_last_boot

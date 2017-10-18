@@ -1,0 +1,26 @@
+- platform: mqtt
+  name: "living_light"
+  state_topic: "home/sonoff/living_room/1/stat"
+  command_topic: "home/sonoff/living_room/1"
+  qos: 1
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+- platform: mqtt
+  name: "chufang_light"
+  state_topic: "home/sonoff/chufang/1/stat"
+  command_topic: "home/sonoff/chufang/1"
+  qos: 1
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
+- platform: mqtt_json
+  name: rgblight
+  state_topic: "home/rgb1"
+  command_topic: "home/rgb1/set"
+  brightness: true
+  rgb: true
+  optimistic: false
+  qos: 0

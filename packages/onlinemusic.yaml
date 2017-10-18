@@ -1,0 +1,17 @@
+shell_command:
+  getmusicurl: "python3 /home/pi/.homeassistant/script/get_music_url.py {{musicname}}"
+
+script:
+  play_163music:
+    sequence:
+      - service: shell_command.getmusicurl
+        data_template:
+          musicname: '{{ musicname }}'
+      - delay: 00:00:03
+      - service: python_script.set_music_url
+      - delay: 00:00:03
+      - service: media_player.play_media
+        data_template:
+          entity_id: media_player.hassbian
+          media_content_type: music
+          media_content_id: "{{states.sensor.musicurl.state}}"

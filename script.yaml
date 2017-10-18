@@ -1,0 +1,289 @@
+play_163music:
+  sequence:
+    - service: shell_command.getmusicurl
+      data_template:
+        musicname: '{{ musicname }}'
+    - delay: 00:00:03
+    - service: python_script.set_music_url
+    - delay: 00:00:03
+    - service: media_player.play_media
+      data_template:
+        entity_id: media_player.mpd
+        media_content_type: music
+        media_content_id: "{{states.sensor.musicurl.state}}"
+
+relaxdeck:
+  sequence:
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.mpd
+      media_content_type: playlist
+      media_content_id: DeckMusic
+
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.main
+      volume_level: 0.60
+
+tv_number1:
+  sequence:
+    - delay:
+        milliseconds: 400
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBiAAABJpMUNhMSEhITEhMRFBEUERIRFDYUERU1EzcUNhU1FTYUNRQSEjgTERMRFTUUERQQEzcUNxMSEjgSNxMRFDYUOBMQFQAFDAABJkcVAAHiCgADtwgJCQAGgQABJkkTAA0FAAAAAAAA"
+tv_number2:
+  sequence:
+    - delay:
+        milliseconds: 400
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBgAAABJpIUNhQRFBAWDxQQFBAVERMREzcVEBM2FDYUNxM2FDYUNxQ3EzcUDxUREzYUERMRFDcUEBQQFDcTNhUQFDUVNhQQFAAFDAABJkkUAAw+AAEnSRMAAkoHAAo8CAANBQAAAAAAAAAA"
+tv_number3:
+  sequence:
+    - delay:
+        milliseconds: 400
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBYAAABJpEUNxMSExAUEBUQFBAWDxUQFDYVDxQ3FDYTNhY0FDYVNxMQFBEUNhM2FRAUERU1FDYUNxM2FBAUEhM2FDYUERUPFAAFDAABJ0kTAAw+AAEnSBYADQU="
+tv_number4:
+  sequence:
+    - delay:
+        milliseconds: 400
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBYAAABJ5EUNhUQFRAVDxUPFg8VDxUQFTUVERM2FDcTNxM2FTUUNhUQFDUUNhU2ExIUERMQFDcUNRQSEhEUEhM2EzcUNhMSEwAFDAABKEcVAAw9AAEpRhQADQU="
+tv_number5:
+  sequence:
+    - delay:
+        milliseconds: 400
+    - service: broadlink.send_packet_192_168_1_234
+      data:
+        packet:
+          - "JgBoAAABJ5IUNRUQFBEUEBQRFBEUEBQQFDcTERU2EzcTNhQ2FDYUNxM4FDUTNxQ2FBAUEBYQFTUTERQQFBEUERM2FTUWNBUREwAFCwABKEgTAAw/AAEmSBQADEAAASZHEwAIGgcAAmUIAA0F"
+tv_number6:
+  sequence:
+    - delay:
+        milliseconds: 400
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBaAAcTAAEnkxQ1FBAUERUPFBITEBUPFhAUNhMRFTYUNRU1FDYWNBU1FBEUEBQSEzYUEBQSFDYTNhU2EzYVNRQRFDUVNhQQFRAUAAULAAEoRxYADD0AASZIFAANBQAAAAAAAAAAAAAAAAAA"
+tv_number7:
+  sequence:
+    - delay:
+        milliseconds: 400
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBmAAABJZIUNhUQFBAUEhMQFBISERUREzYUERQ3EzYTNxM3EzcTOBQQEzcTERM3FBETERQREzgSNxMRFDYUERQ3FDUUNhQRFAAFCwABKEcUAAoZCAABOwnZAAEnSBQADD4AASZKEgANBQAA"
+tv_number8:
+  sequence:
+    - delay:
+        milliseconds: 400
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBgAAABJpEUNhQRExITERUQExETEhMREzcTExI3EzcVNRM3EzgTNxI4EzYVEBM3FBAUERQREzcTERMRFTUUEhI4EjcTNxQSEgAFDAABJkkTAAeSCQYHEQYABIIAASVIEwANBQAAAAAAAAAA"
+tv_number9:
+  sequence:
+    - delay:
+        milliseconds: 400
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBgAAABJpMSORESExEUEBUREhITERUPFTUUEhM3EzYUNhQ4EjYUNhQTEhISOBITERMSERQ2FTUTOBM2FBETNxM4EzYTEhMSFAAFDAABJUkTAAxAAAEmRxUADD4AASdIFQANBQAAAAAAAAAA"
+tv_number0:
+  sequence:
+    - delay:
+        milliseconds: 400
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBYAAABJpEVNhUQExITEBURExITEBQQFTUVERM3EjcUNxQ2FDYSOBM3EzgTNRQRFBAUEhISEzYUEhIRFBETNxM3FDYUNhUQFQAFDgABJUkUAAw+AAEoRhUADQU="
+bedroom_air_conditioner_temp_cool16:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBiAAABJpMUNhMSEhITEhMRFBEUERIRFDYUERU1EzcUNhU1FTYUNRQSEjgTERMRFTUUERQQEzcUNxMSEjgSNxMRFDYUOBMQFQAFDAABJkcVAAHiCgADtwgJCQAGgQABJkkTAA0FAAAAAAAA"
+bedroom_air_conditioner_temp_cool17:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBgAAABJpIUNhQRFBAWDxQQFBAVERMREzcVEBM2FDYUNxM2FDYUNxQ3EzcUDxUREzYUERMRFDcUEBQQFDcTNhUQFDUVNhQQFAAFDAABJkkUAAw+AAEnSRMAAkoHAAo8CAANBQAAAAAAAAAA"
+bedroom_air_conditioner_temp_cool18:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBYAAABJpEUNxMSExAUEBUQFBAWDxUQFDYVDxQ3FDYTNhY0FDYVNxMQFBEUNhM2FRAUERU1FDYUNxM2FBAUEhM2FDYUERUPFAAFDAABJ0kTAAw+AAEnSBYADQU="
+bedroom_air_conditioner_temp_cool19:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBYAAABJ5EUNhUQFRAVDxUPFg8VDxUQFTUVERM2FDcTNxM2FTUUNhUQFDUUNhU2ExIUERMQFDcUNRQSEhEUEhM2EzcUNhMSEwAFDAABKEcVAAw9AAEpRhQADQU="
+bedroom_air_conditioner_temp_cool20:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBoAAABJ5IUNRUQFBEUEBQRFBEUEBQQFDcTERU2EzcTNhQ2FDYUNxM4FDUTNxQ2FBAUEBYQFTUTERQQFBEUERM2FTUWNBUREwAFCwABKEgTAAw/AAEmSBQADEAAASZHEwAIGgcAAmUIAA0F"
+bedroom_air_conditioner_temp_cool21:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBaAAcTAAEnkxQ1FBAUERUPFBITEBUPFhAUNhMRFTYUNRU1FDYWNBU1FBEUEBQSEzYUEBQSFDYTNhU2EzYVNRQRFDUVNhQQFRAUAAULAAEoRxYADD0AASZIFAANBQAAAAAAAAAAAAAAAAAA"
+bedroom_air_conditioner_temp_cool22:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBmAAABJZIUNhUQFBAUEhMQFBISERUREzYUERQ3EzYTNxM3EzcTOBQQEzcTERM3FBETERQREzgSNxMRFDYUERQ3FDUUNhQRFAAFCwABKEcUAAoZCAABOwnZAAEnSBQADD4AASZKEgANBQAA"
+bedroom_air_conditioner_temp_cool23:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBgAAABJpEUNhQRExITERUQExETEhMREzcTExI3EzcVNRM3EzgTNxI4EzYVEBM3FBAUERQREzcTERMRFTUUEhI4EjcTNxQSEgAFDAABJkkTAAeSCQYHEQYABIIAASVIEwANBQAAAAAAAAAA"
+bedroom_air_conditioner_temp_cool24:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBgAAABJpMSORESExEUEBUREhITERUPFTUUEhM3EzYUNhQ4EjYUNhQTEhISOBITERMSERQ2FTUTOBM2FBETNxM4EzYTEhMSFAAFDAABJUkTAAxAAAEmRxUADD4AASdIFQANBQAAAAAAAAAA"
+bedroom_air_conditioner_temp_cool25:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBYAAABJpEVNhUQExITEBURExITEBQQFTUVERM3EjcUNxQ2FDYSOBM3EzgTNRQRFBAUEhISEzYUEhIRFBETNxM3FDYUNhUQFQAFDgABJUkUAAw+AAEoRhUADQU="
+bedroom_air_conditioner_temp_cool26:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBoAAABJ5IUNRUQFBEUEBQRFBEUEBQQFDcTERU2EzcTNhQ2FDYUNxM4FDUTNxQ2FBAUEBYQFTUTERQQFBEUERM2FTUWNBUREwAFCwABKEgTAAw/AAEmSBQADEAAASZHEwAIGgcAAmUIAA0F"
+bedroom_air_conditioner_temp_cool27:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBaAAcTAAEnkxQ1FBAUERUPFBITEBUPFhAUNhMRFTYUNRU1FDYWNBU1FBEUEBQSEzYUEBQSFDYTNhU2EzYVNRQRFDUVNhQQFRAUAAULAAEoRxYADD0AASZIFAANBQAAAAAAAAAAAAAAAAAA"
+bedroom_air_conditioner_temp_cool28:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBmAAABJZIUNhUQFBAUEhMQFBISERUREzYUERQ3EzYTNxM3EzcTOBQQEzcTERM3FBETERQREzgSNxMRFDYUERQ3FDUUNhQRFAAFCwABKEcUAAoZCAABOwnZAAEnSBQADD4AASZKEgANBQAA"
+bedroom_air_conditioner_temp_cool29:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBgAAABJpEUNhQRExITERUQExETEhMREzcTExI3EzcVNRM3EzgTNxI4EzYVEBM3FBAUERQREzcTERMRFTUUEhI4EjcTNxQSEgAFDAABJkkTAAeSCQYHEQYABIIAASVIEwANBQAAAAAAAAAA"
+bedroom_air_conditioner_temp_cool30:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - "JgBgAAABJpMSORESExEUEBUREhITERUPFTUUEhM3EzYUNhQ4EjYUNhQTEhISOBITERMSERQ2FTUTOBM2FBETNxM4EzYTEhMSFAAFDAABJUkTAAxAAAEmRxUADD4AASdIFQANBQAAAAAAAAAA"
+
+#制热
+bedroom_air_conditioner_temp_hot16:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""
+bedroom_air_conditioner_temp_hot17:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""
+bedroom_air_conditioner_temp_hot18:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""
+bedroom_air_conditioner_temp_hot19:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""
+bedroom_air_conditioner_temp_hot20:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""
+bedroom_air_conditioner_temp_hot21:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""
+bedroom_air_conditioner_temp_hot22:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""
+bedroom_air_conditioner_temp_hot23:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""
+bedroom_air_conditioner_temp_hot24:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""
+bedroom_air_conditioner_temp_hot25:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""
+bedroom_air_conditioner_temp_hot26:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""
+bedroom_air_conditioner_temp_hot27:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""
+bedroom_air_conditioner_temp_hot28:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""
+bedroom_air_conditioner_temp_hot29:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""
+bedroom_air_conditioner_temp_hot30:
+  sequence:
+    - service: broadlink.send_packet_192_168_1_63
+      data:
+        packet:
+          - ""

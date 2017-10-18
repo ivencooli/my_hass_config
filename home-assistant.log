@@ -1,0 +1,77 @@
+2017-09-06 00:12:21 WARNING (MainThread) [homeassistant.setup] Setup of climate is taking over 10 seconds.
+2017-09-06 00:12:27 ERROR (Thread-11) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?
+2017-09-06 00:12:38 ERROR (MainThread) [custom_components.climate.gree_other] Failed to connect to device
+2017-09-06 00:12:46 ERROR (MainThread) [custom_components.climate.gree_other] Unable to update from sensor: could not convert string to float: 'unknown'
+2017-09-06 00:12:56 ERROR (MainThread) [custom_components.climate.midea] Failed to connect to device
+2017-09-06 00:12:56 ERROR (MainThread) [custom_components.climate.midea] Unable to update from sensor: could not convert string to float: 'unknown'
+2017-09-06 00:12:56 WARNING (MainThread) [homeassistant.setup] Setup of media_player is taking over 10 seconds.
+2017-09-06 00:12:56 WARNING (MainThread) [homeassistant.setup] Setup of device_tracker is taking over 10 seconds.
+2017-09-06 00:12:56 WARNING (MainThread) [homeassistant.setup] Setup of tts is taking over 10 seconds.
+2017-09-06 00:12:56 WARNING (MainThread) [homeassistant.components.media_player] Setup of platform vlc is taking over 10 seconds.
+2017-09-06 00:12:56 WARNING (MainThread) [homeassistant.components.climate] Setup of platform gree_other is taking over 10 seconds.
+2017-09-06 00:12:56 WARNING (MainThread) [homeassistant.components.climate] Setup of platform midea is taking over 10 seconds.
+2017-09-06 00:12:56 ERROR (Thread-7) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?
+2017-09-06 00:13:00 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/asyncio/tasks.py", line 237, in _step
+    result = next(coro)
+  File "/usr/local/lib/python3.4/dist-packages/homeassistant/components/automation/__init__.py", line 342, in async_trigger
+    if skip_condition or self._cond_func(variables):
+  File "/usr/local/lib/python3.4/dist-packages/homeassistant/components/automation/__init__.py", line 452, in if_action
+    return all(check(hass, variables) for check in checks)
+  File "/usr/local/lib/python3.4/dist-packages/homeassistant/components/automation/__init__.py", line 452, in <genexpr>
+    return all(check(hass, variables) for check in checks)
+  File "/usr/local/lib/python3.4/dist-packages/homeassistant/helpers/condition.py", line 314, in template_if
+    return async_template(hass, value_template, variables)
+  File "/usr/local/lib/python3.4/dist-packages/homeassistant/helpers/condition.py", line 296, in async_template
+    value = value_template.async_render(variables)
+  File "/usr/local/lib/python3.4/dist-packages/homeassistant/helpers/template.py", line 101, in async_render
+    return self._compiled.render(kwargs).strip()
+  File "/usr/local/lib/python3.4/dist-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/local/lib/python3.4/dist-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "<template>", line 1, in top-level template code
+TypeError: unorderable types: NoneType() < int()
+2017-09-06 00:13:02 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/asyncio/tasks.py", line 237, in _step
+    result = next(coro)
+  File "/usr/local/lib/python3.4/dist-packages/homeassistant/components/automation/__init__.py", line 342, in async_trigger
+    if skip_condition or self._cond_func(variables):
+  File "/usr/local/lib/python3.4/dist-packages/homeassistant/components/automation/__init__.py", line 452, in if_action
+    return all(check(hass, variables) for check in checks)
+  File "/usr/local/lib/python3.4/dist-packages/homeassistant/components/automation/__init__.py", line 452, in <genexpr>
+    return all(check(hass, variables) for check in checks)
+  File "/usr/local/lib/python3.4/dist-packages/homeassistant/helpers/condition.py", line 314, in template_if
+    return async_template(hass, value_template, variables)
+  File "/usr/local/lib/python3.4/dist-packages/homeassistant/helpers/condition.py", line 296, in async_template
+    value = value_template.async_render(variables)
+  File "/usr/local/lib/python3.4/dist-packages/homeassistant/helpers/template.py", line 101, in async_render
+    return self._compiled.render(kwargs).strip()
+  File "/usr/local/lib/python3.4/dist-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/local/lib/python3.4/dist-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "<template>", line 1, in top-level template code
+TypeError: unorderable types: NoneType() < int()
+2017-09-06 00:13:27 ERROR (Thread-7) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?
+2017-09-06 00:13:33 WARNING (Thread-2) [netdisco.ssdp] Error fetching description at http://172.7.0.1:80/description.xml
+2017-09-06 00:13:38 WARNING (Thread-2) [netdisco.ssdp] Error fetching description at http://192.168.123.110:9000/plugins/UPnP/MediaServer.xml
+2017-09-06 00:13:45 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
+2017-09-06 00:13:57 ERROR (Thread-11) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?
+2017-09-06 00:14:28 ERROR (Thread-5) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?
+2017-09-06 00:14:59 ERROR (Thread-2) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?
+2017-09-06 00:15:30 ERROR (Thread-4) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?
+2017-09-06 00:16:01 ERROR (Thread-12) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?
+2017-09-06 00:16:32 ERROR (Thread-5) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?
+2017-09-06 00:17:03 ERROR (Thread-6) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?
+2017-09-06 00:17:34 ERROR (Thread-3) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?
+2017-09-06 00:18:05 ERROR (Thread-11) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?
+2017-09-06 00:18:36 ERROR (Thread-7) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?
+2017-09-06 00:19:07 ERROR (Thread-8) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?
+2017-09-06 00:19:38 ERROR (Thread-12) [custom_components.device_tracker.padavanwrt] Connection refused. SSH enabled?

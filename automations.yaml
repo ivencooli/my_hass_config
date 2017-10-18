@@ -1,0 +1,177 @@
+
+- id: '1495687391569'
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: switch.t1
+  action:
+    service_template: >
+         {%- if states('switch.t1') == 'off' -%}
+           switch.turn_off
+         {%- else -%}
+           switch.turn_on
+         {%- endif -%}
+    entity_id: switch.switch1
+
+
+- id: '1495687391'
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: switch.t2
+  action:
+    service_template: >
+         {%- if states('switch.t1') == 'off' -%}
+           switch.turn_off
+         {%- else -%}
+           switch.turn_on
+         {%- endif -%}
+    entity_id: switch.switch2
+
+
+# - alias: '111111'
+#   initial_state: true
+#   trigger:
+#     platform: event
+#     event_type: click
+#     event_data:
+#         entity_id: switch.t1
+#         click_type: single
+#    action:
+#     - service: switch.toggle
+#       entity_id: switch.switch1
+
+
+#
+# #门窗5分钟未关闭
+# - alias: door time
+#   initial_state: true
+#   trigger:
+#     - platform: state
+#       entity_id: chufang_light.
+#       from: 'off'
+#       to: 'on'
+#       for:
+#         minutes: 1
+#   action:
+#     - service: tts.baidu_say
+#       data_template:
+#         message: "厨房灯好象没关好，请查看！"
+#         cache: false
+#     - service: notify.ios_mings_beacon2
+#       data:
+#         title: "安全警报"
+#         message: "厨房灯关好，请查看！"
+#         data:
+#           push:
+#             category: camera
+#           entity_id: camera.room
+#           hide-thumbnail: true
+#
+- alias: Good morning
+  initial_state: true
+  trigger:
+    platform: homeassistant
+    event: start
+    # platform: template
+    # value_template: "{% if is_state('sensor.beacon2', 'li') %}True{% endif %}"
+
+  condition:
+    - condition: template
+      value_template: '{{ states.sensor.beacon2.attributes.distance < 4 }}'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.switch2
+
+- alias: Good evening
+  initial_state: true
+  trigger:
+    platform: homeassistant
+    event: start
+    # platform: template
+    # value_template: "{% if is_state('sensor.beacon2', 'mat') %}True{% endif %}"
+    # - platform: state
+    #   entity_id: sensor.beacon1
+    #   from: 'li'
+    #   to: 'mat'
+  condition:
+    - condition: template
+      value_template: '{{ states.sensor.beacon2.attributes.distance < 4 }}'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.switch2
+#
+# - alias: 1hour_pop
+#   initial_state: true
+#   trigger:
+#     - platform: state
+#       entity_id: sensor.1hour_pop
+#   condition:
+#     condition: and
+#     conditions:
+#     - condition: time
+#       after: '07:00:00'
+#       before: '21:00:00'
+#     - condition: or
+#       conditions:
+#         - condition: numeric_state
+#           entity_id: sensor.1hour_pop
+#           above: 50
+#         - condition: numeric_state
+#           entity_id: sensor.1hour_pop
+#           above: 70
+#         - condition: numeric_state
+#           entity_id: sensor.1hour_pop
+#           above: 90
+#   action:
+#     - service: notify.ios_mings_beacon2
+#       data:
+#         title: "天气预警"
+#         message: "未来一小时“{{states('sensor.1hour_pop')}}%”的可能会有【{{states('sensor.1hour_weather')}}】"
+#
+#
+# - alias: 'send ir code'
+#   initial_state: true
+#   hide_entity: true
+#   trigger:
+#     - platform: state
+#       entity_id: input_slider1.number1
+#     - platform: state
+#       entity_id: input_boolean.ir_code_send
+#       state: 'on'
+#
+#   action:
+#     - service: script.turn_on
+#       data_template:
+#         entity_id:
+#           - script.tv_number{{ states.input_slider1.number100.state | int }}
+#           - script.tv_number{{ states.input_slider1.number10.state | int }}
+#           - script.tv_number{{ states.input_slider1.number1.state | int }}
+#
+# - alias: bedroom_air_conditioner_temp_cool
+#   trigger:
+#     - platform: state
+#       entity_id: input_boolean.bedroom_air_conditioner_temp
+#       state: 'on'
+#     - platform: state
+#       entity_id: input_slider2.bedroom_air_conditioner_temp
+#
+#   action:
+#     - service: script.turn_on
+#       data_template:
+#         entity_id:
+#           - script.bedroom_air_conditioner_temp_cool{{ states.input_slider2.bedroom_air_conditioner_temp.state | int }}
+#
+# - alias: bedroom_air_conditioner_temp_hot
+#   trigger:
+#     - platform: state
+#       entity_id: input_boolean.bedroom_air_conditioner_temp
+#       state: 'on'
+#     - platform: state
+#       entity_id: input_slider2.bedroom_air_conditioner_temp
+#
+#   action:
+#     - service: script.turn_on
+#       data_template:
+#         entity_id:
+#           - script.bedroom_air_conditioner_temp_hot{{ states.input_slider2.bedroom_air_conditioner_temp.state | int }}
